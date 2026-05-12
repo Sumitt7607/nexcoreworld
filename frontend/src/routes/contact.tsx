@@ -34,9 +34,9 @@ function ContactPage() {
       <section className="py-24 px-6">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
-            { icon: Mail, title: "Email Us", detail: "projects@nexcoretechnologies.com", label: "Send a message" },
-            { icon: Phone, title: "Call Us", detail: "+1 3452876422", label: "Talk to expert" },
-            { icon: MapPin, title: "Location", detail: "Manchester, Kentucky", label: "Our headquarters" },
+            { icon: Mail, title: "Email Us", detail: "nexcoretechnologies.team@gmail.com", label: "Send a message" },
+            { icon: Phone, title: "Call Us", detail: "+91 7607696315", label: "Talk to expert" },
+            { icon: MapPin, title: "Location", detail: "Greater Noida, Uttar Pradesh", label: "Our headquarters" },
           ].map((item, i) => (
             <motion.div
               key={i}

@@ -70,7 +70,7 @@ export function CtaFooter() {
                 Contact Sales <ArrowUpRight className="h-4 w-4" />
               </a>
               <a href="tel:+13452876422" className="inline-flex items-center gap-2 rounded-full bg-white border border-slate-200 px-6 py-3 text-sm font-bold text-slate-700 hover:bg-slate-50 transition-colors">
-                Call Us: +1 345 287 6422 <ArrowUpRight className="h-4 w-4" />
+                Call Us: +91 7607696315 <ArrowUpRight className="h-4 w-4" />
               </a>
             </div>
           </motion.div>
