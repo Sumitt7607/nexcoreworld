@@ -59,7 +59,7 @@ function AboutPage() {
               <span className="w-2 h-2 rounded-full bg-[#c0ff33]"></span>
               ABOUT US
             </div>
-            <h1 className="text-5xl md:text-7xl font-bold text-[#0f172a] mb-6 leading-tight">
+            <h1 className="text-4xl xs:text-5xl md:text-7xl font-bold text-[#0f172a] mb-6 leading-tight">
               About <span className="text-[#004ab0]">Nexcore Technologies</span>
             </h1>
             <p className="text-xl text-slate-600 leading-relaxed max-w-3xl">

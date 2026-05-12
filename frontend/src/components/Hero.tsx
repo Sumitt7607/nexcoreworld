@@ -68,7 +68,7 @@ export function Hero() {
             initial="hidden"
             animate="visible"
             style={{ fontFamily: "'Outfit', sans-serif" }}
-            className="mt-4 font-black uppercase leading-[0.95] tracking-tighter text-white text-3xl sm:text-5xl md:text-6xl lg:text-7xl"
+            className="mt-4 font-black uppercase leading-[0.95] tracking-tighter text-white text-3xl xs:text-4xl sm:text-6xl md:text-7xl lg:text-8xl"
           >
             {headline.split(" ").map((word, wordIndex) => (
               <span key={wordIndex} className="inline-block sm:whitespace-nowrap mr-[0.3em] last:mr-0">
@@ -112,7 +112,7 @@ export function Hero() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 1.5, duration: 0.8 }}
-            className="mt-10 sm:mt-12 max-w-3xl text-sm sm:text-base font-medium leading-relaxed text-white/90"
+            className="mt-8 sm:mt-12 max-w-3xl text-sm sm:text-base font-medium leading-relaxed text-white/90"
           >
             From precision-engineered data intelligence to high-impact creative marketing. We provide the full-stack infrastructure your business needs to identify, engage, and scale at exponential speed.
           </motion.p>

@@ -55,7 +55,7 @@ function TechnographicIntelligence() {
               Technographic Intelligence
             </div>
             
-            <h1 className="text-lg sm:text-4xl md:text-5xl lg:text-7xl font-black uppercase tracking-tighter leading-none text-slate-950 break-words">
+            <h1 className="text-3xl xs:text-4xl sm:text-6xl md:text-7xl font-black uppercase tracking-tighter leading-none text-slate-950 break-words">
               Know <span className="text-[#004ab0]">Exactly</span> What Tech Your Prospects Run
             </h1>
 

@@ -102,7 +102,7 @@ export function Services() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl md:text-6xl font-black uppercase tracking-tighter text-slate-900 leading-[0.9]"
+            className="text-3xl xs:text-4xl md:text-6xl font-black uppercase tracking-tighter text-slate-900 leading-[0.9]"
           >
             EXPLORE OUR PROFESSIONAL <br />
             <span className="text-[#004ab0]">DATA & MARKETING</span> SERVICES

@@ -43,7 +43,7 @@ function ContactPage() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
-              className="p-10 rounded-[2.5rem] bg-slate-50 border border-slate-100 text-center group hover:bg-white hover:shadow-xl transition-all"
+              className="p-6 sm:p-10 rounded-[2.5rem] bg-slate-50 border border-slate-100 text-center group hover:bg-white hover:shadow-xl transition-all"
             >
               <div className="mx-auto w-16 h-16 rounded-2xl bg-[#c0ff33] text-slate-950 flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform">
                 <item.icon size={32} />

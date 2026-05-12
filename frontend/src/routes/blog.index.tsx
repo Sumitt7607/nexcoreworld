@@ -88,7 +88,7 @@ function BlogPage() {
             <span className="w-2 h-2 rounded-full bg-[#c0ff33]"></span>
             INTELLIGENCE HUB
           </div>
-          <h1 className="text-5xl md:text-7xl font-bold text-[#0f172a] mb-6 leading-tight">
+          <h1 className="text-3xl xs:text-5xl md:text-7xl font-bold text-[#0f172a] mb-6 leading-tight">
             B2B Marketing <span className="text-[#004ab0] italic">Insights</span> <br />That Drive Pipeline
           </h1>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto mb-8">
@@ -183,15 +183,15 @@ function BlogPage() {
                     {featuredPost?.tag || fallbackFeatured.tag}
                   </span>
                 </div>
-                <div className="p-8 flex-1 flex flex-col justify-between">
+                <div className="p-6 md:p-8 flex-1 flex flex-col justify-between">
                   <div>
                     <div className="text-xs text-slate-400 mb-2">
                       {featuredPost?.date || fallbackFeatured.date} • 5 min read
                     </div>
-                    <h2 className="text-2xl font-bold text-[#0f172a] mb-4">
+                    <h2 className="text-xl md:text-2xl font-bold text-[#0f172a] mb-4">
                       {featuredPost?.title || fallbackFeatured.title}
                     </h2>
-                    <p className="text-sm text-slate-600 mb-6">
+                    <p className="text-sm text-slate-600 mb-6 line-clamp-3">
                       {featuredPost?.description || fallbackFeatured.description}
                     </p>
                   </div>
@@ -270,7 +270,7 @@ function BlogPage() {
 
       {/* Newsletter */}
       <section className="py-24 px-6 bg-white">
-        <div className="max-w-5xl mx-auto bg-[#004ab0] p-12 rounded-3xl text-white relative overflow-hidden">
+        <div className="max-w-5xl mx-auto bg-[#004ab0] p-6 sm:p-12 rounded-3xl text-white relative overflow-hidden">
           <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "radial-gradient(circle at center, #fff 1px, transparent 1px)", backgroundSize: "20px 20px" }}></div>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center relative z-10">

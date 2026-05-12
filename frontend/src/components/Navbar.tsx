@@ -75,7 +75,7 @@ export function Navbar() {
             <img 
               src={logoImg} 
               alt="Nexcore Technologies Logo" 
-              className="h-24 sm:h-32 w-auto transition-all"
+              className="h-12 xs:h-16 sm:h-32 w-auto transition-all"
             />
           </Link>
 

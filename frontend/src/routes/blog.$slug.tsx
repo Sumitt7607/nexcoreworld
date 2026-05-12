@@ -98,7 +98,7 @@ function BlogPostPage() {
             <span>· 5 min read</span>
           </div>
 
-          <h1 className="mb-10 text-4xl font-bold leading-tight sm:text-5xl md:text-6xl">
+          <h1 className="mb-10 text-3xl xs:text-4xl font-bold leading-tight sm:text-5xl md:text-6xl">
             {post.title}
           </h1>
 

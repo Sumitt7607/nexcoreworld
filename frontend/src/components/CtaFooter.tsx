@@ -59,7 +59,7 @@ export function CtaFooter() {
                 READY TO SCALE
               </p>
               
-              <h2 className="mt-6 text-5xl md:text-6xl font-black uppercase tracking-tighter text-slate-950 leading-none">
+              <h2 className="mt-6 text-3xl xs:text-4xl md:text-6xl font-black uppercase tracking-tighter text-slate-950 leading-none">
                 FUEL YOUR <br />
                 <span className="text-[#c0ff33]">GROWTH</span>
               </h2>
@@ -137,7 +137,7 @@ export function CtaFooter() {
                 <img 
                   src={logoImg} 
                   alt="Nexcore Technologies Logo" 
-                  className="h-28 w-auto"
+                  className="h-16 sm:h-28 w-auto"
                 />
               </div>
               
