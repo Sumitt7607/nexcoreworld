@@ -1,0 +1,264 @@
+import logoImg from "@/assets/Nexcore Technologies.png";
+import { motion } from "framer-motion";
+import { ArrowUpRight, Instagram, Linkedin, Twitter, Youtube, ArrowUp, ShieldCheck } from "lucide-react";
+
+import { useState } from "react";
+import { toast } from "sonner";
+
+export function CtaFooter() {
+  const [formData, setFormData] = useState({ name: "", email: "", ict: "" });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formData.name || !formData.email || !formData.ict) {
+      toast.error("Please fill in all fields");
+      return;
+    }
+
+    setIsSubmitting(true);
+    try {
+      const response = await fetch(`${import.meta.env.VITE_API_URL || ""}/api/contact`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        toast.success("Message sent to projects@nexcoretechnologies.com!");
+        setFormData({ name: "", email: "", ict: "" });
+      } else {
+        throw new Error("Failed to send");
+      }
+    } catch (error) {
+      toast.error("Failed to send message. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  return (
+    <footer id="contact" className="relative bg-slate-50">
+      {/* CTA Section */}
+      <section className="relative mx-auto max-w-7xl px-6 py-16 sm:py-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Left Column (Content) - Separate Card */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="p-10 md:p-16 flex flex-col justify-between bg-white rounded-[2rem] border border-slate-100 shadow-[0_20px_50px_rgba(0,0,0,0.08)]"
+          >
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.4em] text-slate-500">
+                READY TO SCALE
+              </p>
+              
+              <h2 className="mt-6 text-5xl md:text-6xl font-black uppercase tracking-tighter text-slate-950 leading-none">
+                FUEL YOUR <br />
+                <span className="text-[#c0ff33]">GROWTH</span>
+              </h2>
+            </div>
+
+            <div className="mt-12 flex flex-wrap gap-4">
+              <a href="/contact" className="inline-flex items-center gap-2 rounded-full bg-slate-950 px-6 py-3 text-sm font-bold text-white hover:bg-slate-800 transition-colors">
+                Contact Sales <ArrowUpRight className="h-4 w-4" />
+              </a>
+              <a href="tel:+13452876422" className="inline-flex items-center gap-2 rounded-full bg-white border border-slate-200 px-6 py-3 text-sm font-bold text-slate-700 hover:bg-slate-50 transition-colors">
+                Call Us: +1 345 287 6422 <ArrowUpRight className="h-4 w-4" />
+              </a>
+            </div>
+          </motion.div>
+
+          {/* Right Column (Form) - Separate Card */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="bg-[#0b1a3d] p-10 md:p-16 relative overflow-hidden rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.2)]"
+          >
+            {/* Subtle grid pattern overlay */}
+            <div className="absolute inset-0 opacity-[0.05] [background-image:linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] [background-size:40px_40px]" />
+            
+            <form onSubmit={handleSubmit} className="relative z-10 space-y-4 text-left">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <input 
+                  type="text" 
+                  required
+                  placeholder="Full Name"
+                  value={formData.name}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  className="w-full rounded-xl bg-white/5 border border-white/10 px-6 py-3 text-white placeholder-white/40 focus:outline-none focus:border-[#c0ff33] transition-all"
+                />
+                <input 
+                  type="email" 
+                  required
+                  placeholder="Email Address"
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  className="w-full rounded-xl bg-white/5 border border-white/10 px-6 py-3 text-white placeholder-white/40 focus:outline-none focus:border-[#c0ff33] transition-all"
+                />
+              </div>
+              <textarea 
+                required
+                placeholder="Let me know your ICT"
+                rows={3}
+                value={formData.ict}
+                onChange={(e) => setFormData({ ...formData, ict: e.target.value })}
+                className="w-full rounded-xl bg-white/5 border border-white/10 px-6 py-3 text-white placeholder-white/40 focus:outline-none focus:border-[#c0ff33] transition-all"
+              />
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                disabled={isSubmitting}
+                type="submit"
+                className="w-full rounded-xl bg-[#c0ff33] py-4 text-slate-950 font-bold uppercase tracking-widest hover:bg-[#a8eb12] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {isSubmitting ? "Sending..." : "Fuel Your Growth"}
+              </motion.button>
+            </form>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Main Footer Section */}
+      <div className="bg-background text-white py-20 px-6">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+            {/* Logo and Info */}
+            <div className="space-y-8">
+              <div className="flex items-center gap-3">
+                <img 
+                  src={logoImg} 
+                  alt="Nexcore Technologies Logo" 
+                  className="h-28 w-auto"
+                />
+              </div>
+              
+              <div className="space-y-1">
+                <p className="text-sm text-white/50">Get In Touch With Us</p>
+                <a href="/contact" className="text-lg font-bold text-[#c0ff33] hover:underline transition-all">
+                  Expert Advice
+                </a>
+              </div>
+
+              {/* <div className="pt-10 space-y-4">
+                <div className="flex items-center gap-4 p-4 rounded-2xl bg-white/5 border border-white/10">
+                  <ShieldCheck className="h-10 w-10 text-[#c0ff33]" />
+                  <div>
+                    <p className="text-sm font-bold">CCPA and GDPR aligned</p>
+                    <p className="text-[10px] text-white/40">Full Compliance with all Laws</p>
+                  </div>
+                </div>
+              </div> */}
+            </div>
+
+            {/* Services */}
+            <div className="space-y-6">
+              <h4 className="text-lg font-bold text-white">Services</h4>
+              <ul className="space-y-4 text-sm text-white/40">
+                {[
+                  "Technographic Intelligence",
+                  "Title Based Database",
+                  "Channel Partner Insight",
+                  "Stack Data Append",
+                  "Data Appending & Discovery",
+                  "Industry Database",
+                  "Scaling Services",
+                  "ALL Services"
+                ].map((l) => (
+                  <li key={l}>
+                    <a href={l === "Scaling Services" ? "/services/scaling" : l === "ALL Services" ? "/services" : "#"} className="hover:text-[#c0ff33] transition-colors">{l}</a>
+                  </li>
+                ))}
+
+              </ul>
+            </div>
+
+            {/* Resources */}
+            <div className="space-y-6">
+              <h4 className="text-lg font-bold text-white">Resources</h4>
+              <ul className="space-y-4 text-sm text-white/40">
+                {[
+                  "Customers",
+                  "Case Studies",
+                  "Privacy Policy",
+                  "Refund Policy",
+                  "Blogs"
+                ].map((l) => (
+                  <li key={l}>
+                    <a href="#" className="hover:text-[#c0ff33] transition-colors">{l}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Company / Contact */}
+            <div className="space-y-6">
+              <h4 className="text-lg font-bold text-white">Company</h4>
+              <div className="space-y-6 text-sm text-white/40">
+                <div>
+                  <a href="#" className="block hover:text-[#c0ff33] transition-colors">About Us</a>
+                </div>
+                <div>
+                  <p className="text-white/60 font-semibold mb-1">Contact Us</p>
+                  <p>+91 7607696315</p>
+                </div>
+                <div>
+                  <p className="text-white/60 font-semibold mb-1">Sales</p>
+                  <p>sales@nexcoretechnologies.com</p>
+                </div>
+                <div>
+                  <p className="text-white/60 font-semibold mb-1">Project Status Inquiry</p>
+                  <p>projects@nexcoretechnologies.com</p>
+                </div>
+                <div>
+                  <p className="text-white/60 font-semibold mb-1">Other Inquiries</p>
+                  <p>admin@nexcoretechnologies.com</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-20 pt-10 border-t border-white/5 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-12">
+
+            <div className="flex gap-8 items-center">
+              <div className="flex gap-4">
+                {[
+                  { Icon: Linkedin, href: "https://www.linkedin.com/company/nexcore-technologies-india/" },
+                  { Icon: Instagram, href: "https://www.instagram.com/nexcore.technologies?igsh=emdtcm12MDR1M3Z0" }
+                ].map((social, i) => (
+                  <a 
+                    key={i} 
+                    href={social.href} 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="grid h-10 w-10 place-items-center rounded-full bg-white/5 hover:bg-[#c0ff33] hover:text-slate-950 transition-all"
+                  >
+                    <social.Icon size={18} />
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-20 flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-white/20 uppercase tracking-widest">
+            <p>© 2026 Nexcore Technologies. All rights reserved.</p>
+            <button 
+              onClick={scrollToTop}
+              className="grid h-12 w-12 place-items-center rounded-full bg-white/5 hover:bg-[#c0ff33] hover:text-slate-950 transition-all"
+            >
+              <ArrowUp size={20} />
+            </button>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
