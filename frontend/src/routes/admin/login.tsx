@@ -17,7 +17,7 @@ function AdminLogin() {
     // Initialize default admin if not exists
     if (!localStorage.getItem("admin_auth")) {
       localStorage.setItem("admin_auth", JSON.stringify({
-        email: "admin@Nexcore.com",
+        email: "admin@nexcore.com",
         password: "admin"
       }));
     }
@@ -27,7 +27,8 @@ function AdminLogin() {
     e.preventDefault();
     const auth = JSON.parse(localStorage.getItem("admin_auth") || "{}");
     
-    if (email === auth.email && password === auth.password) {
+    // Case-insensitive email check
+    if (email.toLowerCase() === auth.email.toLowerCase() && password === auth.password) {
       localStorage.setItem("admin_session", "true");
       toast.success("Login successful");
       navigate({ to: "/admin" });
@@ -68,7 +69,7 @@ function AdminLogin() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="w-full rounded-xl border border-white/10 bg-white/5 pl-12 pr-4 py-3 text-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
-                  placeholder="admin@Nexcore.com"
+                  placeholder="admin@nexcore.com"
                 />
               </div>
             </div>
